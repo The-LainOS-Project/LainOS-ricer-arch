@@ -1,4 +1,5 @@
-# LainOS-ricer-arch
+
+![LainOS](images/logo.png)
 <!--toc:start-->
 - [Objective](#objective)
 - [Openbox](#openbox)
@@ -9,8 +10,6 @@
   - [PDLP](#pdlp)
 - [Social media](#social-media)
 <!--toc:end-->
-
-![LainOS](images/logo.png)
 
 ![Linux](https://img.shields.io/badge/-Linux-grey?logo=linux)
 
@@ -49,7 +48,14 @@ Other projects from the LainOS team
 [PDL Packages](https://github.com/ashk123/PDLP) from users.
 
 ## Social media
-
 <a href="https://www.reddit.com/r/LainOSdevelopers/">
-<img src="https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white">
-</a>&nbsp;&nbsp;
+<img align="left" src="https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white">
+</a>
+
+<a href="https://matrix.to/?fbclid=IwAR3aREfZ0l84eRuLdQ1RWq38Bm2mqvK4irokYoEWnvOibQPT7vqiIq_nhY8#/!hhlpPAPloYluaKwYAb:matrix.org?via=matrix.org">
+<img align="left" src="https://img.shields.io/badge/Matrix%20-%20%230047a7?style=for-the-badge&logo=matrix">
+</a>
+
+<a href="todo">
+<img align="left" src="https://img.shields.io/badge/Discord%20-%20%234900ff?style=for-the-badge&logo=discord">
+</a>
