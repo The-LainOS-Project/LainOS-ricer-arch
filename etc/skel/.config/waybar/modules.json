@@ -21,7 +21,7 @@
 			"default": ""
 		},
 		"persistent-workspaces": {
-			"*": 5
+			"*": 10
 		}
 	},
 	"wlr/taskbar": {
