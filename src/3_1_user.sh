@@ -73,7 +73,7 @@ makepkg -si
 
 category "Install packages from the AUR"
 # Packages from the AUR, easier to install with an AUR helper with a non-root user
-paru -S --noconfirm --needed ani-cli c-lolcat gpa kloak-git \
+paru -S --noconfirm --needed ani-cli c-lolcat gowall gpa kloak-git \
 	librewolf-bin mpv-{thumbfast-git,uosc} obmenu-generator perl-linux-desktopfiles pyprland\
 	sddm-lain-wired-theme tdrop tor-browser wlogout wl-gammarelay-rs \
 	xdg-ninja zenmap
