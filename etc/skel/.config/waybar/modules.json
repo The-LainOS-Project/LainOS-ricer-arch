@@ -108,7 +108,7 @@
 	},
 	"custom/calculator": {
 		"format": "",
-		"on-click": "wofi-calc",
+		"on-click": "rofi -show calc -modi calc -no-show-match -no-sort",
 		"tooltip": false
 	},
 	"custom/appmenu": {
