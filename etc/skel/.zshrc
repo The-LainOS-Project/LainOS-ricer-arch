@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.local/share/oh-my-zsh"
 
 HISTSIZE=-1
 HISTFILESIZE=-1
@@ -26,7 +26,7 @@ fi
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="random" #"powerlevel10k/powerlevel10k" #"agnoster" #"jonathan"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -89,8 +89,8 @@ ZSH_THEME="random" #"powerlevel10k/powerlevel10k" #"agnoster" #"jonathan"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(catimg colored-man-pages copybuffer copyfile copypath
-	dirhistory docker docker-compose extract fd git gitignore
-	man ripgrep pip python sudo
+	dirhistory docker docker-compose extract git gitignore
+	man pip python sudo
 	zsh-autosuggestions zsh-syntax-highlighting
 )
 
@@ -248,4 +248,3 @@ source $HOME/.config/nvim/switcher.conf
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 neofetch
-
