@@ -43,10 +43,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 	echo_p "Installing power-level-10k"
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
 		"${ZSH_CUSTOM:-$HOME/.local/share/oh-my-zsh/custom}"/themes/powerlevel10k
-	sed -i '/ZSH_THEME=/d' ~/.zshrc
-	sed -i '28a\ZSH_THEME="powerlevel10k/powerlevel10k"' ~/.zshrc
-	sed -i 's/ fd//' ~/.zshrc
-	sed -i 's/ ripgrep//' ~/.zshrc
+		sed -i '/ZSH_THEME=/d' ~/.zshrc
+		sed -i '28a\ZSH_THEME="powerlevel10k/powerlevel10k"' ~/.zshrc
+		sed -i 's/ fd//' ~/.zshrc
+		sed -i 's/ ripgrep//' ~/.zshrc
 
 	# Install zsh-syntax-highlighting
 	echo_p "Installing zsh-syntax-highlighting"
@@ -74,7 +74,8 @@ makepkg -si
 category "Install packages from the AUR"
 # Packages from the AUR, easier to install with an AUR helper with a non-root user
 paru -S --noconfirm --needed ani-cli c-lolcat gowall gpa kloak-git \
-	librewolf-bin light mpv-{thumbfast-git,uosc} obmenu-generator perl-linux-desktopfiles pyprland tdrop tor-browser wlogout wl-gammarelay-rs \
+	librewolf-bin light mpv-{thumbfast-git,uosc} obmenu-generator perl-linux-desktopfiles pyprland \
+ 	tdrop tor-browser wlogout wl-gammarelay-rs \
 	xdg-ninja zenmap
 
 category "Install fonts from the AUR"
