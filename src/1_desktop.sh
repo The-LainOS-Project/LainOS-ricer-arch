@@ -28,7 +28,7 @@ message 7 "Openbox / X.org"
 
 # xf86-video-amdgpu
 install_list linux-firmware mesa openbox plymouth sddm xorg-server \
-	gnome-keyring qt5ct qt6ct zsh
+	gnome-keyring qt5ct qt5-multimedia qt5-quickcontrols qt6ct zsh
 
 echo_s "Enabling sddm as display manager"
 systemctl enable sddm.service
