@@ -178,6 +178,7 @@ Rectangle {
 		focusColor: "#3d3b93"
 		hoverColor: "#3d3b93"
 		textColor: "#5eeff5"
+		menuColor: "#000"
 		arrowIcon: "angle-down.png"
 		KeyNavigation.backtab: password; KeyNavigation.tab: rebootBtn;
 	}
