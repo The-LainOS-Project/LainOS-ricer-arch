@@ -1,3 +1,4 @@
+// Import necessary modules for the QML file
 import QtQuick 2.5
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 1.4 as Qqc
@@ -7,21 +8,27 @@ import QtMultimedia 5.5
 import SddmComponents 2.0
 
 Rectangle {
+	// Main container for the login screen
 	color: "black"
 	width: Window.width
 	height: Window.height
 
+	// Connections to handle SDDM login events
 	Connections {
 		target: sddm
 
 		onLoginSucceeded: {
+			// Action when login succeeds
+			// We could add log-in sound
 		}
 
 		onLoginFailed: {
+			// Play denied sound on login failure
 			denied.play()
 		}
 	}
 
+	// Background image for the login screen
 	AnimatedImage {
 		width: parent.width
 		height: parent.height
@@ -29,28 +36,29 @@ Rectangle {
 		source: "bgN5.gif"
 	}
 
+	// Layout for the login form and other components
 	ColumnLayout {
 		width: parent.width
 		height: parent.height
-		AnimatedImage{
+
+		// Logo or animation at the top
+		AnimatedImage {
 			Layout.alignment: Qt.AlignCenter
 			Layout.topMargin: 2
 			width: 192
 			height: 192
 			source: "WiredLogIn.gif"
 		}
-		AnimatedImage{
-			Layout.alignment: Qt.AlignCenter
-			Layout.bottomMargin: 20
-			height: 50
-			source: "whoIsUser.gif"
-		}
+
+		// Label for the username field
 		Qqc.Label {
 			Layout.alignment: Qt.AlignCenter
 			text: "Ｕｓｅｒ ＩD:"
 			color: "#5eeff5"
 			font.pixelSize: 16
 		}
+
+		// Username input field
 		Qqc.TextField {
 			id: username
 			Layout.alignment: Qt.AlignCenter
@@ -63,6 +71,7 @@ Rectangle {
 					border.color: "#3d3b93"
 				}
 			}
+			// Key navigation and login action
 			KeyNavigation.backtab: shutdownBtn; KeyNavigation.tab: password
 			Keys.onPressed: {
 				if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
@@ -71,12 +80,16 @@ Rectangle {
 				}
 			}
 		}
+
+		// Label for the password field
 		Qqc.Label {
 			Layout.alignment: Qt.AlignCenter
 			text: "Ｐａｓｓｗｏｒｄ："
 			color: "#5eeff5"
 			font.pixelSize: 16
 		}
+
+		// Password input field
 		Qqc.TextField {
 			id: password
 			echoMode: TextInput.Password
@@ -89,6 +102,7 @@ Rectangle {
 					border.color: "#3d3b93"
 				}
 			}
+			// Key navigation and login action
 			KeyNavigation.backtab: username; KeyNavigation.tab: session
 			Keys.onPressed: {
 				if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
@@ -97,6 +111,8 @@ Rectangle {
 				}
 			}
 		}
+
+		// Login button with label and mouse interaction
 		ColumnLayout {
 			Layout.alignment: Qt.AlignCenter
 			Layout.topMargin: 4
@@ -118,6 +134,8 @@ Rectangle {
 			}
 		}
 	}
+
+	// Shutdown button with tooltip
 	AnimatedImage {
 		id: shutdownBtn
 		height: 80
@@ -136,11 +154,13 @@ Rectangle {
 					var tooltip = component.createObject(shutdownBtn);
 					tooltip.x = -45
 					tooltip.y = 60
-				tooltip.destroy(600);
+					tooltip.destroy(600);
 				}
 			}
 		}
 	}
+
+	// Reboot button with tooltip
 	AnimatedImage {
 		id: rebootBtn
 		anchors.right: shutdownBtn.left
@@ -160,11 +180,13 @@ Rectangle {
 					var tooltip = component.createObject(rebootBtn);
 					tooltip.x = -45
 					tooltip.y = 50
-				tooltip.destroy(600);
+					tooltip.destroy(600);
 				}
 			}
 		}
 	}
+
+	// Session selection dropdown
 	ComboBox {
 		id: session
 		height: 30
@@ -182,6 +204,8 @@ Rectangle {
 		arrowIcon: "angle-down.png"
 		KeyNavigation.backtab: password; KeyNavigation.tab: rebootBtn;
 	}
+
+	// Background music and sound effects
 	Audio {
 		id: bgMusic
 		source: "bg_music.wav"
@@ -198,6 +222,7 @@ Rectangle {
 		source: "denied.wav"
 	}
 
+	// Focus logic for username and password fields
 	Component.onCompleted: {
 		if (username.text == "") {
 			username.focus = true
