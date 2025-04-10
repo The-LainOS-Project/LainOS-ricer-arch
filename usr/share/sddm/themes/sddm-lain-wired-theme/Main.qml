@@ -201,25 +201,37 @@ Rectangle {
 		radius: 15
 		model: sessionModel
 		currentIndex: sessionModel.lastIndex
-		style: ComboBoxStyle {
-        background: Rectangle {
-            color: "#5eeff5"
-            border.color: "#5eeff5"
-            border.width: 1
-            radius: 15
-        }
-		label: Text {
-            color: control.hovered ? "#5eeff5" : "#01013D"
-            text: control.currentText
-            font.pixelSize: 12
-            verticalAlignment: Text.AlignVCenter
-            horizontalAlignment: Text.AlignLeft
-            anchors.left: parent.left
-            anchors.leftMargin: 10
-        }
-		KeyNavigation.backtab: password; KeyNavigation.tab: rebootBtn;
+			Rectangle {
+				anchors.fill: parent
+				color: backgroundColor
+				border.color: borderColor
+				border.width: 1
+				radius: 15 
+					}
+			Text {
+        		id: displayText
+        			anchors {
+						left: parent.left
+						leftMargin: 10
+						verticalCenter: parent.verticalCenter
+						right: dropdownArrow.left
+						rightMargin: 5
+        					}
+				text: session.currentText
+				color: mouseArea.containsMouse ? hoverTextColor : textColor
+				font.pixelSize: 12
+				elide: Text.ElideRight
+    			}
+			MouseArea {
+				id: mouseArea
+				anchors.fill: parent
+				hoverEnabled: true
+				onClicked: {
+					session.forceActiveFocus();
+					session.popup.visible = true;
+				}
+			}
 	}
-
 	// Background music and sound effects
 	Audio {
 		id: bgMusic
