@@ -177,7 +177,7 @@ Rectangle {
 		borderColor: "#3d3b93"
 		focusColor: "#3d3b93"
 		hoverColor: "#3d3b93"
-		textColor: "#5eeff5"
+		textColor: session.hovered ? "#5eeff5" : "3d3b93"
 		menuColor: "#000"
 		arrowIcon: "angle-down.png"
 		KeyNavigation.backtab: password; KeyNavigation.tab: rebootBtn;
