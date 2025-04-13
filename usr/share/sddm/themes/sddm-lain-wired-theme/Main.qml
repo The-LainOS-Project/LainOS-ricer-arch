@@ -198,39 +198,25 @@ Rectangle {
 		width: 200
 		x: 15
 		y: 20
-		radius: 15
+		// radius: 15
 		model: sessionModel
-		currentIndex: sessionModel.lastIndex
-			Rectangle {
-				anchors.fill: parent
-				color: backgroundColor
-				border.color: borderColor
-				border.width: 1
-				radius: 15 
-					}
-			Text {
-        		id: displayText
-        			anchors {
-						left: parent.left
-						leftMargin: 10
-						verticalCenter: parent.verticalCenter
-						right: dropdownArrow.left
-						rightMargin: 5
-        					}
-				text: session.currentText
-				color: mouseArea.containsMouse ? hoverTextColor : textColor
-				font.pixelSize: 12
-				elide: Text.ElideRight
-    			}
-			MouseArea {
-				id: mouseArea
-				anchors.fill: parent
-				hoverEnabled: true
-				onClicked: {
-					session.forceActiveFocus();
-					session.popup.visible = true;
-				}
+		index: sessionModel.lastIndex
+		color: "#000"
+		borderColor: "#3d3b93"
+		focusColor: "#3d3b93"
+		hoverColor: "#3d3b93"
+		textColor: mouseArea.containsMouse ? "#01013d" : "#533ff5"
+		KeyNavigation.backtab: password; KeyNavigation.tab: rebootBtn;
+		MouseArea {
+			id: mouseArea
+			anchors.fill: parent
+			hoverEnabled: true
+			acceptedButtons: Qt.NoButton
+			onClicked: {
+				session.forceActiveFocus();
+				session.popup.visible = true;
 			}
+		}
 	}
 	// Background music and sound effects
 	Audio {
