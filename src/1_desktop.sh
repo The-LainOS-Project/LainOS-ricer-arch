@@ -55,7 +55,7 @@ read -r CHOICE
 case $CHOICE in
 0) echo_p "We did nothing as per your request\n" ;;
 1) list=(
-	pulseaudio{,-alsa}
+	pulseaudio{,-alsa,-bluetooth}
 	pavucontrol alsa-{firmware,lib,plugins,utils}
 	gstreamer gst-plugins-{base,bad,good,ugly} playerctl volumeicon
 ) ;;
@@ -71,7 +71,7 @@ install_list "${list[@]}"
 # Bluetooth ####################################################################
 
 message 6 "Installation of bluetooth software"
-install_list pulseaudio-bluetooth bluez{,-libs,-utils} blueberry
+install_list bluez{,-libs,-utils} blueberry
 
 echo_s "Enabling bluetooth service"
 
