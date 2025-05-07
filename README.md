@@ -15,9 +15,6 @@
   <img align="top" src="https://img.shields.io/badge/Lain%20OS%20web-3d3b93?style=for-the-badge&logo=Devbox" alt="Web">
 </a>
 
-
-![LainOS](images/logo.png)
-
 # LainOS Ricer Arch
 
 
